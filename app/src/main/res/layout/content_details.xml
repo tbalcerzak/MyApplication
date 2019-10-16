@@ -57,7 +57,7 @@
 
                 <CheckBox
                     android:enabled="false"
-                    android:id="@id/rememberCb"
+                    android:id="@+id/rememberCb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>

@@ -13,4 +13,13 @@
     <string name="details_login">Login: </string>
     <string name="details_password">Password: </string>
     <string name="remember_me">Remember me: </string>
+
+    <string-array name="brew_array">
+        <item>Cappuccino</item>
+        <item>Espresso</item>
+        <item>Mocha</item>
+        <item>Caffè Americano</item>
+        <item>Cafe Zorro</item>
+    </string-array>
+
 </resources>

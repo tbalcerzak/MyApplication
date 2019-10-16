@@ -17,10 +17,12 @@ import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,8 +46,21 @@ public class LoginActivity extends AppCompatActivity {
         final CheckBox checkBox = findViewById(R.id.rememberCb);
         final Button loginButton = findViewById(R.id.login);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
+        Spinner staticSpinner = (Spinner) findViewById(R.id.static_spinner);
 
-        //TEST
+
+        // Create an ArrayAdapter using the string array and a default spinner
+        ArrayAdapter<CharSequence> staticAdapter = ArrayAdapter
+                .createFromResource(this, R.array.brew_array,
+                        android.R.layout.simple_spinner_item);
+
+        // Specify the layout to use when the list of choices appears
+        staticAdapter
+                .setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        // Apply the adapter to the spinner
+        staticSpinner.setAdapter(staticAdapter);
+
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
@@ -78,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent i = new Intent(LoginActivity.this, DetailsActivity.class);
                     i.putExtra("EXTRA_LOGIN", usernameEditText.getText().toString());
                     i.putExtra("EXTRA_PASSWORD", passwordEditText.getText().toString());
-                    i.putExtra("EXTRA_REMEMBER", checkBox.isSelected());
+                    i.putExtra("EXTRA_REMEMBER", checkBox.isChecked());
                     startActivity(i);
                 }
                 setResult(Activity.RESULT_OK);

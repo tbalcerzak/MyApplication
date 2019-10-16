@@ -23,7 +23,7 @@ public class DetailsActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // handle arrow click here
-        if(item.getItemId() == android.R.id.home){
+        if (item.getItemId() == android.R.id.home) {
             finish();
         }
         return super.onOptionsItemSelected(item);
@@ -48,10 +48,9 @@ public class DetailsActivity extends AppCompatActivity {
         });
 
 
-
         TextView login = findViewById(R.id.login);
         TextView password = findViewById(R.id.password);
-         CheckBox remember = findViewById(R.id.rememberCb);
+        CheckBox remember = findViewById(R.id.rememberCb);
         login.setText(getIntent().getExtras().get("EXTRA_LOGIN").toString());
         password.setText(getIntent().getExtras().get("EXTRA_PASSWORD").toString());
         remember.setChecked(getIntent().getExtras().getBoolean("EXTRA_REMEMBER"));

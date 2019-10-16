@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.638" />
 
     <EditText
         android:id="@+id/password"
@@ -60,21 +60,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <CheckBox
         android:id="@+id/rememberCb"
         android:layout_width="wrap_content"
         android:layout_height="32dp"
-        android:layout_marginBottom="459dp"
-        android:layout_marginEnd="323dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="224dp"
+        android:layout_marginBottom="31dp"
+        android:layout_marginEnd="213dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="16dp"
         android:text="@string/remember_me"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/static_spinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <Spinner
+        android:id="@+id/static_spinner"
+        android:layout_width="0dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="31dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rememberCb" />
 
     <ProgressBar
         android:id="@+id/loading"
